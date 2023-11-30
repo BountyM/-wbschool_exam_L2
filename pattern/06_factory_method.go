@@ -32,10 +32,6 @@ func NewCreator() Creator {
 	return &ConcreteCreator{}
 }
 
-func NewCreator() Creator {
-	return &ConcreteCreator{}
-}
-
 func (p *ConcreteCreator) CreateProduct(action action) Product {
 	var product Product
 

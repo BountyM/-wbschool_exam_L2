@@ -26,7 +26,10 @@ func (c *ToggleOffCommand) Execute() string {
 	return c.receiver.ToggleOff()
 }
 
-type (r *Receiver) ToggleOn() string {
+type Receiver struct {
+}
+
+func (r *Receiver) ToggleOn() string {
 	return "Toggle On"
 }
 
@@ -55,4 +58,3 @@ func (i *Invoker) Execute() string {
 	}
 	return result
 }
-
