@@ -31,6 +31,8 @@ func main() {
 
 Ответ:
 ```
-...
+error
+
+err != nil сравниваются разные типы *main.customError и <nil>
 
 ```

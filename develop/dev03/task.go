@@ -1,5 +1,11 @@
 package main
 
+import (
+	"log"
+
+	"github.com/BountyM/wbschool_exam_L2/dev03/pkg"
+)
+
 /*
 === Утилита sort ===
 
@@ -26,5 +32,15 @@ package main
 */
 
 func main() {
-
+	sort, err := pkg.NewSort()
+	if err != nil {
+		log.Fatalln(err)
+		return
+	}
+	sort.Run()
+	_, err = sort.Write()
+	if err != nil {
+		log.Fatalln(err)
+		return
+	}
 }

@@ -1,5 +1,13 @@
 package main
 
+import (
+	"log"
+
+	"github.com/BountyM/wbschool_exam_L2/dev11/calendar"
+	"github.com/BountyM/wbschool_exam_L2/dev11/routes"
+	"github.com/BountyM/wbschool_exam_L2/dev11/server"
+)
+
 /*
 === HTTP server ===
 
@@ -23,5 +31,12 @@ package main
 */
 
 func main() {
-
+	calendar := calendar.New()
+	routes.IntitRoutes(calendar)
+	server := new(server.Server)
+	err := server.Run("8080", 10)
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Print("Server start...")
 }
